@@ -1,0 +1,87 @@
+.Tab {
+    width: 100%;
+    display: flex;
+    height: 45px;
+    font-size: 12px;
+
+    >.tabsItems {
+        width: 25%;
+        color: #666;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        a {
+            width: 100%;
+            color: #666;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            text-decoration: none;
+        }
+
+        .icon {
+            width: 22px;
+            height: 22px;
+            background-size: 100% 100% !important;
+            background-repeat: no-repeat !important;
+        }
+    }
+
+    .home {
+        background-image: url('../../static/icons/tabs/home.svg');
+    }
+
+    .home-active {
+        .icon {
+            background-image: url('../../static/icons/tabs/home_active.svg');
+        }
+
+    }
+
+    .shopcar {
+
+        background-image: url('../../static/icons/tabs/car.svg');
+    }
+
+    .shopcar-active {
+        .icon {
+            background-image: url('../../static/icons/tabs/car_active.svg');
+        }
+
+    }
+
+    .order {
+        background-image: url('../../static/icons/tabs/order-list.svg');
+    }
+
+    .order-active {
+        .icon {
+            background-image: url('../../static/icons/tabs/order-list_active.svg');
+        }
+
+    }
+
+    .mind {
+        background-image: url('../../static/icons/tabs/mind.svg');
+    }
+
+    .mind-active {
+        .icon {
+            background-image: url('../../static/icons/tabs/mind_active.svg');
+        }
+
+    }
+
+
+
+    >.tabsItems:first-child {
+        padding-left: 5px;
+    }
+
+    >.tabsItems:last-child {
+        padding-right: 5px;
+    }
+}
