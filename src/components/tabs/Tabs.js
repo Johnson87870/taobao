@@ -20,28 +20,28 @@ export default class Tabs extends Component {
         <div className="Tab">
           {/* onClick={this.gotoNav.bind(this, "/")} */}
           <div className="tabsItems">
-            <NavLink to="home" activeClassName="home-active">
+            <NavLink to="/home" activeClassName="home-active">
               <span className="icon home"></span>
               <span className="text"> 首页 </span>
             </NavLink>
           </div>
           <div className="tabsItems">
             {/* onClick={this.gotoNav.bind(this, "/card")} */}
-            <NavLink to="cart" activeClassName="shopcar-active">
+            <NavLink to="/cart" activeClassName="shopcar-active">
               <span className="icon shopcar"> </span>
               <span className="text"> 购物车 </span>
             </NavLink>
           </div>
           <div className="tabsItems">
             {/* onClick={this.gotoNav.bind(this, "/orderList")} */}
-            <NavLink to="orderList" activeClassName="order-active">
+            <NavLink to="/orderList" activeClassName="order-active">
               <span className="icon order"> </span>
               <span className="text"> 订单列表 </span>
             </NavLink>
           </div>
           <div className="tabsItems">
             {/* onClick={this.gotoNav.bind(this, "")} */}
-            <NavLink to="mind" activeClassName="mind-active">
+            <NavLink to="/mind" activeClassName="mind-active">
               <span className="icon mind"> </span>
               <span className="text"> 我的淘宝 </span>
             </NavLink>
