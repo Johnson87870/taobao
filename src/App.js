@@ -12,11 +12,11 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <Route path="/home" component={Home}></Route>
-        <Route path="/mind" component={Mind}></Route>
-        <Route path="/orderList" component={OrderList}></Route>
-        <Route path="/cart" component={ShopingCart}></Route>
-        <Route path="/login" component={Login}></Route>
+        <Route path="home" exact component={Home}></Route>
+        <Route path="mind" component={Mind}></Route>
+        <Route path="orderList" component={OrderList}></Route>
+        <Route path="cart" component={ShopingCart}></Route>
+        <Route path="login" component={Login}></Route>
       </div>
 
       <Tabs className="TabsBar" />
