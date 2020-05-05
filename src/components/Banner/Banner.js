@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Banner.scss";
+import Hammer from "hammerjs";
 
 function Banner() {
   const bannerDatas = [
@@ -20,21 +21,53 @@ function Banner() {
     setTransition();
   }, [active]);
 
-  const setTransition = () => {
+  const setTransition = (offset = 0) => {
+    function transitionend() {
+      // 动画结束后就关闭动画
+      banner.current.style.transitionProperty = "none";
+      // 恢复状态为1静止
+      setActive(1);
+      // 当前位置在补位的位置时马上切换到本该在的位置
+      if (active === 0) {
+        // 使用setTimeout包裹，避免transitionProperty动画未关闭就切换的闪频
+        setTimeout(() => {
+          setActive(bannerDatas.length);
+        }, 0);
+      }
+      if (active === bannerDatas.length + 1) {
+        setTimeout(() => {
+          setActive(1);
+        }, 0);
+      }
+      banner.current.removeEventListener("transitionend", transitionend, false);
+    }
+    banner.current.addEventListener("transitionend", transitionend, false);
+
     const distance = (1 - active) * SCREEN_WIDTH;
-    banner.current.style.transform = `translate3d(${distance}px, 0, 0)`;
+    banner.current.style.transform = `translate3d(${distance + offset}px,0,0)`;
+  };
+
+  const handleChangeActive = (number) => {
+    // 当在动画进行时，不允许切换
+    if (active === 2) return;
+    // 切换前先把动画参数打开
+    banner.current.style.transitionProperty = "all";
+    // 修改状态为进行时
+    setActive(2);
+    // 改变当前位置
+    setActive(number);
   };
 
   const back = () => {
     console.log("back");
-    setActive(active === 1 ? bannerDatas.length : active - 1);
+    setActive(active === 0 ? bannerDatas.length : active - 1);
 
     console.log(active);
   };
 
   const next = () => {
     console.log("next");
-    setActive(active === bannerDatas.length ? 1 : active + 1);
+    setActive(active === bannerDatas.length + 1 ? 1 : active + 1);
 
     console.log(active);
   };
@@ -46,6 +79,23 @@ function Banner() {
         <li>2</li>
         <li>3</li> */}
         {bannerDatas.map((image, index) => {
+          if (active <= 1 && index + 1 === bannerDatas.length) {
+            return (
+              <li key={index} style={{ left: -1 * SCREEN_WIDTH }}>
+                <img src={image} alt="" />
+              </li>
+            );
+          }
+          if (active >= bannerDatas.length && index == 0) {
+            return (
+              <li
+                key={index}
+                style={{ left: bannerDatas.length * SCREEN_WIDTH }}
+              >
+                <img src={image} alt="" />
+              </li>
+            );
+          }
           return (
             <li key={index} style={{ left: index * SCREEN_WIDTH }}>
               <img src={image} alt="" />
@@ -54,8 +104,8 @@ function Banner() {
         })}
       </ul>
 
-      <div onClick={back}>left</div>
-      <div onClick={next}>right</div>
+      {/* <div onClick={back}>left</div> */}
+      {/* <div onClick={next}>right</div> */}
     </div>
   );
 }
