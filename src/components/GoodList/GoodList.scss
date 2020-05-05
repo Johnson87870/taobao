@@ -1,0 +1,45 @@
+.goodList {
+    margin-top: 11px;
+    padding: 0 8px 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .items {
+        margin-top: 9px;
+        width: 171px;
+        height: 286px;
+        font-size: 13px;
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+
+        .goodList-image {
+            width: 100%;
+            height: 171px;
+            background-color: pink;
+        }
+
+        .goodList-goodTitle {
+            padding: 0 9px 0 10px;
+            margin-top: 11.5px;
+            color: #333;
+        }
+
+        .goodList-price-buy {
+            padding: 0 9px 0 10px;
+            margin-top: 11px;
+
+            .price {
+                font-size: 14px;
+                color: #ff5500;
+            }
+
+            .buy {
+                margin-left: 6px;
+                font-size: 11px;
+                color: #999;
+            }
+        }
+    }
+}

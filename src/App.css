@@ -1,8 +1,11 @@
-.App {}
+.App {
+    background-color: #f4f4f4;
+}
 
 .TabsBar {
     width: 100%;
     position: fixed;
+    background-color: #fff;
     bottom: 0;
     left: 0;
 }
