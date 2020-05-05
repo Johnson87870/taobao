@@ -89,11 +89,9 @@ function NavBar() {
                             </span>
                             <span className="nav-text">{childItem.text}</span>
                         </div>
-
                     })}
                 </div>
             })}
-
         </div>
     )
 }

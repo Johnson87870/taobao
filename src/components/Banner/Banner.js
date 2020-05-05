@@ -4,9 +4,10 @@ import Hammer from "hammerjs";
 
 function Banner() {
   const bannerDatas = [
-    "http://dingyue.nosdn.127.net/lZx3ujyfH46=YPTbha2pGrAqdghj9BiS5G3Sm6e=fu4461534591655949compressflag.jpeg",
-    "http://5b0988e595225.cdn.sohucs.com/images/20191230/671d70970b294356822cf5b04975265a.png",
-    "http://5b0988e595225.cdn.sohucs.com/images/20181202/ae8a507610e243bd87c241978d3c0865.png",
+    "https://gw.alicdn.com/imgextra/i4/62/O1CN016t0XbK1CKR9b38HNy_!!62-0-lubanu.jpg",
+    "https://img.alicdn.com/simba/img/TB1RIFfEhD1gK0jSZFKSuwJrVXa.jpg_q50.jpg",
+    "https://img.alicdn.com/simba/img/TB1R9MPD7T2gK0jSZFkSuwIQFXa.jpg_q50.jpg",
+    "https://gw.alicdn.com/imgextra/i2/135/O1CN017mUXdp1Crs4CJJtx6_!!135-0-lubanu.jpg",
   ];
 
   const [active, setActive] = useState(1);
