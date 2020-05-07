@@ -51,7 +51,7 @@ function GoodList() {
     <div className="goodList">
       {goodList.map((item, index) => {
         return (
-          <div className="items">
+          <div key={index} className="items">
             <span className="goodList-image">
               <img src={item.goodImage} alt="" />
             </span>
