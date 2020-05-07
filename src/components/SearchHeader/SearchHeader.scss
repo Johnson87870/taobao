@@ -1,10 +1,15 @@
 .search-header {
+    width: 95.5%;
     height: 37px;
     background-color: rgb(255, 133, 42);
     display: flex;
     align-items: center;
     padding-right: 9px;
     padding-left: 9px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
 
     .logo {
         width: 30px;
